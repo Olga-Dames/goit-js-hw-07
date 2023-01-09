@@ -1,6 +1,5 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
-import * as basicLightbox from '../'
 
 console.log(galleryItems);
 
@@ -36,12 +35,16 @@ function onClickShowFullSize(e) {
   if (!e.target.classList.contains('gallery__image')) {
     return;
   }
-    const fullSizeImage = e.target.dataset.source
-  // console.log(fullSizeImage);
+  const fullSizeImage = e.target.dataset.source;
+ console.log(fullSizeImage)
+  const visible = basicLightbox.visible(fullSizeImage)
+// instance.show(fullSizeImage)
+console.log(visible)
+  // onClickOpenModal();
 }
 
-const instance = basicLightbox.create(
-	document.querySelector('.gallery__image'))
+// function onClickOpenModal () {
+  
+// }
 
-instance.show()
 
