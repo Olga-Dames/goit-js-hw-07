@@ -35,16 +35,18 @@ function onClickShowFullSize(e) {
   if (!e.target.classList.contains('gallery__image')) {
     return;
   }
-  const fullSizeImage = e.target.dataset.source;
- console.log(fullSizeImage)
-  const visible = basicLightbox.visible(fullSizeImage)
-// instance.show(fullSizeImage)
-console.log(visible)
-  // onClickOpenModal();
-}
 
-// function onClickOpenModal () {
-  
-// }
+  const fullSizeImage = e.target.dataset.source;
+
+  const instance = basicLightbox.create(`<img src = "${fullSizeImage}" width = "800" height = "600"/>`)
+
+instance.show();
+
+galleryRef.addEventListener('keydown', (e) => {
+  if(e.key === "Escape") {
+    instance.close();
+  }
+})
+}
 
 
